@@ -628,6 +628,7 @@ simArgs += ` --filename none`;
 let strategyName = (argv.use_strategies) ? argv.use_strategies : 'all';
 let populationFileName = (argv.population_data) ? argv.population_data : null;
 let populationSize = (argv.population) ? argv.population : 100;
+let processLimit = (argv.processLimit) ? argv.processLimit : PARALLEL_LIMIT;
 
 console.log(`Backtesting strategy ${strategyName} ...`);
 console.log(`Creating population of ${populationSize} ...\n`);
@@ -736,7 +737,7 @@ let simulateGeneration = () => {
     };
   })).reduce((a, b) => a.concat(b));
 
-  parallel(tasks, PARALLEL_LIMIT, (err, results) => {
+  parallel(tasks, processLimit, (err, results) => {
     console.log("\n\Generation complete, saving results...");
 
     results = results.filter(function(r) {
