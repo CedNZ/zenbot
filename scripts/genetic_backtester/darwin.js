@@ -179,6 +179,7 @@ let processOutput = output => {
   delete r.stats;
   delete r.use_strategies;
   delete r.verbose;
+  delete r.processLimit;
 //  r.selector = r.selector.normalized
 
   if (start) {
