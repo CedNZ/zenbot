@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 /* Zenbot 4 Genetic Backtester
  * Clifford Roche <clifford.roche@gmail.com>
  * 07/01/2017
@@ -39,7 +38,11 @@ let NEUTRAL_RATE_MAX = 10
 
 let NEUTRAL_RATE_AUTO = false
 
+// The following filters remove candidates from the results
+
 let FITNESS_CUTOFF = 0.5  // Do not allow phenotypes lower than this fitness
+let ROI_CUTOFF = 5  // Do not allow results with roi lower than this percentage
+let WLRATIO_CUTOFF = 0.3  // Do not allow results with win loss ration below this
 
 let iterationCount = 0
 
@@ -302,10 +305,10 @@ let strategies = {
     profit_stop_pct: Range(1,20),
 
     // -- strategy
-    bollinger_size: Range(1, 40),
+    bollinger_size: Range(10, 20),
     bollinger_time: RangeFloat(1,6),
-    bollinger_upper_bound_pct: RangeFloat(-1, 30),
-    bollinger_lower_bound_pct: RangeFloat(-1, 30)
+    bollinger_upper_bound_pct: RangeFloat(-1, 20),
+    bollinger_lower_bound_pct: RangeFloat(-1, 20)
   },
   cci_srsi: {
     // -- common
@@ -685,6 +688,7 @@ let populationFileName = (argv.population_data) ? argv.population_data : null
 let populationSize = (argv.population) ? argv.population : 100
 let fitnessCutoff = (argv.fitness) ? argv.fitness : FITNESS_CUTOFF 
 let processLimit = (argv.processLimit) ? argv.processLimit : PARALLEL_LIMIT;
+let roiCutoff = (argv.roi) ? argv.roi : ROI_CUTOFF
 
 console.log(`Backtesting strategy ${strategyName} ...`)
 console.log(`Creating population of ${populationSize} ...\n`)
@@ -926,17 +930,18 @@ let simulateGeneration = () => {
 simulateGeneration()
 
 // Some basic minimum fitness criteria to accept candidate in pool.
-// Eliminates 0 wins, low fitness and no trades
+// Eliminates 0 wins, low fitness and no trades, low roi, low win loss ratio.
 function meetsMinimumViability(candidate) {
+  console.log(JSON.stringify(candidate))
   result = true
-  if (candidate.sim) {
-    result = result && parseFloat(candidate.sim.fitness) > fitnessCutoff
-    result = result && parseInt(candidate.sim.wins) > 0
-    result = result && parseFloat(candidate.sim.frequency) > 0
-  } else if (candidate.fitness) {
-    result = result && parseFloat(candidate.fitness) > fitnessCutoff
-    result = result && parseInt(candidate.wins) > 0
-    result = result && parseFloat(candidate.frequency) > 0
+
+  data = candidate.sim?candidate.sim:candidate
+
+  if (data) {
+    result = result && parseFloat(data.fitness) > fitnessCutoff
+    result = result && parseFloat(data.roi) > roiCutoff
+    result = result && parseInt(data.wins) > 0
+    result = result && parseFloat(data.frequency) > 0
   } else {
     result = false
   }
