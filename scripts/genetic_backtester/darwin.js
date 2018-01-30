@@ -367,25 +367,12 @@ crossover_vwap: {
     profit_stop_pct: Range(1,20),
 
     // -- strategy
-<<<<<<< HEAD
     ema_short_period: Range(1, 20),
     ema_long_period: Range(20, 100),
     up_trend_threshold: Range(0, 50),
     down_trend_threshold: Range(0, 50),
     overbought_rsi_periods: Range(1, 50),
     overbought_rsi: Range(20, 100)
-=======
-    cci_periods: Range(1, 200),
-    rsi_periods: Range(1, 200),
-    srsi_periods: Range(1, 200),
-    srsi_k: Range(1, 50),
-    srsi_d: Range(1, 50),
-    oversold_rsi: Range(1, 20),
-    overbought_rsi: Range(80, 100),
-    oversold_cci: Range(-100, 100),
-    overbought_cci: Range(1, 100),
-    constant: RangeFloat(0.001, 0.05)
->>>>>>> 8289415cb3faf48a92c8addc95b7cdb0c4fe0d7b
   },
   macd: {
     // -- common
@@ -400,7 +387,6 @@ crossover_vwap: {
     profit_stop_pct: Range(1,20),
 
     // -- strategy
-<<<<<<< HEAD
     ema_short_period: Range(1, 20),
     ema_long_period: Range(20, 100),
     signal_period: Range(1, 20),
@@ -408,19 +394,6 @@ crossover_vwap: {
     down_trend_threshold: Range(0, 50),
     overbought_rsi_periods: Range(1, 50),
     overbought_rsi: Range(20, 100)
-=======
-    rsi_periods: Range(5, 50),
-    srsi_periods: Range(5, 100),
-    srsi_k: Range(5, 50),
-    srsi_d: Range(5, 50),
-    oversold_rsi: Range(20, 20),
-    overbought_rsi: Range(80, 80),
-    ema_short_period: Range(1, 20),
-    ema_long_period: Range(20, 100),
-    signal_period: Range(1, 20),
-    up_trend_threshold: Range(1, 20),
-    down_trend_threshold: Range(1, 20)
->>>>>>> 8289415cb3faf48a92c8addc95b7cdb0c4fe0d7b
   },
  momentum: {
     // -- common
