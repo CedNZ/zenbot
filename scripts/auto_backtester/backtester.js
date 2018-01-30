@@ -85,7 +85,6 @@ let runCommand = (strategy, exchangeMarketPair,strategyName, cb) => {
   let zenbot_cmd = process.platform === 'win32' ? 'zenbot.bat' : './zenbot.sh'; // Use 'win32' for 64 bit windows too
   let localGen = countArr.length
   strategy.backtester_generation = localGen
-
   let command = `${zenbot_cmd} sim ${simArgs} ${strategyArgs[strategyName]} --period_length=${strategy.period_length}  --min_periods=${strategy.min_periods} --backtester_generation=${localGen}`;
   console.log(`[ ${localGen}/${strategies[strategyName].length} ] ${command}`);
 

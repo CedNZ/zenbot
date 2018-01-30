@@ -122,6 +122,10 @@ module.exports = {
     if (typeof phenotype.sim === 'undefined') return 0
     var vsBuyHoldRate = (phenotype.sim.vsBuyHold / 50)
     var wlRatio = phenotype.sim.wins - phenotype.sim.losses
+<<<<<<< HEAD
+=======
+    // 2.71828 is https://en.wikipedia.org/wiki/E_(mathematical_constant)
+>>>>>>> 8289415cb3faf48a92c8addc95b7cdb0c4fe0d7b
     var wlRatioRate = 1.0 / (1.0 + Math.pow(2.71828, (wlRatio*-1)))
     var frequencyRate = 1.0 / (1.0 + Math.pow(2.71828, (phenotype.sim.frequency*-1)))
     var rate = vsBuyHoldRate * wlRatioRate * frequencyRate
