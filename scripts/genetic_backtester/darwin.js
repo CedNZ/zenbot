@@ -153,8 +153,9 @@ let processOutput = (output,taskStrategyName, pheno)=> {
     end = parseInt(simulationResults.end || null)
   }
 
+  let currency_capital = params.currency_capital > 0 ? params.currency_capital : 1
 
-  let roi = roundp(((endBalance - params.currency_capital) / params.currency_capital) * 100, 3 )
+  let roi = roundp(((endBalance - currency_capital) / currency_capital) * 100, 3 )
 
 
   //todo: figure out what this is trying to do.
