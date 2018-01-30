@@ -315,15 +315,6 @@
     "label": "BTC/XST"
   },
   {
-    "asset": "BTCD",
-    "currency": "BTC",
-    "min_size": "0.01634094",
-    "min_total": "0.0005",
-    "max_size": "1000000",
-    "increment": "0.00000001",
-    "label": "BTC/BTCD"
-  },
-  {
     "asset": "VIA",
     "currency": "BTC",
     "min_size": "1.34509846",
@@ -1566,33 +1557,6 @@
     "label": "ETH/GNO"
   },
   {
-    "asset": "APX",
-    "currency": "BTC",
-    "min_size": "0.26913554",
-    "min_total": "0.0005",
-    "max_size": "1000000",
-    "increment": "0.00000001",
-    "label": "BTC/APX"
-  },
-  {
-    "asset": "TKN",
-    "currency": "BTC",
-    "min_size": "1.52123646",
-    "min_total": "0.0005",
-    "max_size": "1000000",
-    "increment": "0.00000001",
-    "label": "BTC/TKN"
-  },
-  {
-    "asset": "TKN",
-    "currency": "ETH",
-    "min_size": "1.47492625",
-    "min_total": "0.0005",
-    "max_size": "1000000",
-    "increment": "0.00000001",
-    "label": "ETH/TKN"
-  },
-  {
     "asset": "HMQ",
     "currency": "BTC",
     "min_size": "20.78137988",
@@ -1753,24 +1717,6 @@
     "max_size": "1000000",
     "increment": "0.00000001",
     "label": "ETH/PTOY"
-  },
-  {
-    "asset": "MYST",
-    "currency": "BTC",
-    "min_size": "3.46981263",
-    "min_total": "0.0005",
-    "max_size": "1000000",
-    "increment": "0.00000001",
-    "label": "BTC/MYST"
-  },
-  {
-    "asset": "MYST",
-    "currency": "ETH",
-    "min_size": "3.30906684",
-    "min_total": "0.0005",
-    "max_size": "1000000",
-    "increment": "0.00000001",
-    "label": "ETH/MYST"
   },
   {
     "asset": "CFI",

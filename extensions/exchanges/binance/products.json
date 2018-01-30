@@ -2119,17 +2119,53 @@
     "asset": "BNB",
     "currency": "USDT",
     "min_size": "0.01000000",
-    "max_size": "100000",
-    "increment": "0.0001",
-    "label": "BNB/USDT"
+    "max_size": "100000.00000000",
+    "increment": "0.01000000",
+    "label": "INS/ETH"
   },
   {
-    "id": "ETHUSDT",
-    "asset": "ETH",
-    "currency": "USDT",
-    "min_size": "0.00001000",
-    "max_size": "100000",
-    "increment": "0.01",
-    "label": "ETH/USDT"
+    "id": "PIVXBTC",
+    "asset": "PIVX",
+    "currency": "BTC",
+    "min_size": "0.01000000",
+    "max_size": "100000.00000000",
+    "increment": "0.01000000",
+    "label": "PIVX/BTC"
+  },
+  {
+    "id": "PIVXETH",
+    "asset": "PIVX",
+    "currency": "ETH",
+    "min_size": "0.01000000",
+    "max_size": "100000.00000000",
+    "increment": "0.01000000",
+    "label": "PIVX/ETH"
+  },
+  {
+    "id": "PIVXBNB",
+    "asset": "PIVX",
+    "currency": "BNB",
+    "min_size": "0.01000000",
+    "max_size": "10000.00000000",
+    "increment": "0.01000000",
+    "label": "PIVX/BNB"
+  },
+  {
+    "id": "IOSTBTC",
+    "asset": "IOST",
+    "currency": "BTC",
+    "min_size": "1.00000000",
+    "max_size": "100000.00000000",
+    "increment": "1.00000000",
+    "label": "IOST/BTC"
+  },
+  {
+    "id": "IOSTETH",
+    "asset": "IOST",
+    "currency": "ETH",
+    "min_size": "1.00000000",
+    "max_size": "100000.00000000",
+    "increment": "1.00000000",
+    "label": "IOST/ETH"
   }
 ]
