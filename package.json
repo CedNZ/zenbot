@@ -41,7 +41,6 @@
     "expose-loader": "^0.7.4",
     "express": "^4.16.2",
     "file-loader": "^1.1.6",
-    "forex.analytics": "mkmarek/forex.analytics#7bc278987700d4204e959af17de61495941d1a14",
     "gdax": "github:coinbase/gdax-node#v0.5.0",
     "gemini-api": "^2.0.4",
     "glob": "^7.1.1",

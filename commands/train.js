@@ -6,7 +6,6 @@ var tb = require('timebucket')
   , spawn = require('child_process').spawn
   , moment = require('moment')
   , colors = require('colors')
-  , analytics = require('forex.analytics')
   , ProgressBar = require('progress')
   , crypto = require('crypto')
 
@@ -300,12 +299,6 @@ module.exports = function container (get, set, clear) {
               incomplete: ' '
             }
           )
-
-          return analytics.findStrategy(candlesticks, fa_getTrainOptions(so), function(strategy, fitness, generation) {
-            bar.tick({
-              'fitness': fitness
-            })
-          })
         }
 
         function createCandlesticks () {
